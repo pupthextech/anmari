@@ -8,6 +8,11 @@
             {{ Session::get('message') }}
         </div>
     @endif
+    @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+        </div>
+    @endif
     <form method="POST" action="{{ route('verifyLogin') }}">
         @csrf
         <div class="mb-3">
@@ -19,7 +24,7 @@
             <input type="password" class="form-control" id="password" name="password">
         </div>
         <div class="mb-3 mr-4">
-            <a href="">Register</a>
+            <a href="{{ route('register') }}">Register</a>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>

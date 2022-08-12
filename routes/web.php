@@ -18,5 +18,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('login', [User\Login::class, 'index']);
+Route::get('login', [User\Login::class, 'index'])->name('login');
 Route::post('login/verify', [User\Login::class, 'verify'])->name('verifyLogin');
+Route::get('register', [User\Registration::class, 'index'])->name('register');
+Route::post('register/verify', [User\Registration::class, 'verify'])->name('verifyRegistration');

@@ -29,6 +29,8 @@ class User extends Authenticatable
         'user_type',
     ];
 
+    public $timestamps = true;
+
     /**
      * The attributes that should be hidden for serialization.
      *
