@@ -52,7 +52,7 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="Login.html" class="flex-c-m trans-04 p-lr-25">
+						<a href="{{ URL::to('login') }}" class="flex-c-m trans-04 p-lr-25">
 							LOGIN
 						</a>
 					</div>
