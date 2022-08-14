@@ -30,10 +30,17 @@ class Login extends Controller
             // set session
             $user = User::where('username',$request->username)->first();
             $request->session()->put('user_details', $user);
-            dd($request->session()->all());
+            
+            return redirect('admin/products');
         } else{
             session()->flash('message', 'Invalid credentials');
             return redirect()->back();
         }
+    }
+
+    public function logout() {
+        \Auth::logout();
+        session()->flush();
+        return redirect()->route('login');
     }
 }
