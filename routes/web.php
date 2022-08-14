@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
+use App\Http\Controllers\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::post('login/verify', [User\Login::class, 'verify'])->name('verifyLogin');
 Route::get('register', [User\Registration::class, 'index'])->name('register');
 Route::post('register/verify', [User\Registration::class, 'verify'])->name('verifyRegistration');
 Route::get('/logout',[User\Login::class, 'logout'])->name('logout'); 
+
+// Products (admin)
+Route::resource('admin/products', Admin\Products::class)->middleware('checkRole');
